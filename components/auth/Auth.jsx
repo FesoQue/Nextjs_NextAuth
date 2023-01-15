@@ -16,13 +16,13 @@ const Auth = ({ children, role }) => {
     } else if (!hasAccess) {
       router.push("/access-denied");
     }
-  }, [loading, hasUser, router]);
+  }, [loading, hasUser, router, hasAccess]);
 
   if (loading || !hasUser) {
     return (
       <main style={{ display: "grid", placeItems: "center" }}>
         <ClipLoader
-          color={"#ddd"}
+          color={"#555"}
           loading={loading}
           size={150}
           aria-label="Loading Spinner"

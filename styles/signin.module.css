@@ -1,0 +1,25 @@
+.main {
+  display: grid;
+  place-items: center;
+}
+.loginBtn {
+  min-width: 18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  font-size: 20px;
+  border-radius: 4px;
+  outline: 0;
+  border: 1px solid #aaa;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.loginBtn span svg {
+  font-size: 30px;
+  margin-right: 1rem;
+}
+.loginBtn:hover {
+  background: rgba(var(--card-rgb), 0.1);
+}
