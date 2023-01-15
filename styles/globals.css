@@ -94,6 +94,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+main {
+  min-height: 100vh;
+}
 
 a {
   color: inherit;
@@ -108,8 +111,14 @@ nav {
   min-height: 80px;
   display: grid;
   place-items: center;
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
   text-align: center;
-  outline: 1px solid blueviolet;
+
   z-index: 9999999999999999;
 }
 nav button {

@@ -11,7 +11,7 @@ export default function App({
     <SessionProvider session={session}>
       <Navbar />
       {Component.auth ? (
-        <Auth>
+        <Auth role={Component.auth.role}>
           <Component {...pageProps} />
         </Auth>
       ) : (

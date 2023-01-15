@@ -81,7 +81,7 @@ export default function Home() {
             </p>
           </Link>
 
-          <Link href="#" className={styles.card}>
+          <Link href="/author" className={styles.card}>
             <h2 className={inter.className}>
               Author Dashboard <span>-&gt;</span>
             </h2>
@@ -90,7 +90,7 @@ export default function Home() {
             </p>
           </Link>
 
-          <Link href="#" className={styles.card}>
+          <Link href="/user" className={styles.card}>
             <h2 className={inter.className}>
               User Dashboard <span>-&gt;</span>
             </h2>

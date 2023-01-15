@@ -1,27 +1,22 @@
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import React from "react";
 import style from "../styles/dashboard.module.css";
 
-const Admin = () => {
+const Author = () => {
   const { data: session } = useSession();
   return (
     <main className={style.main}>
       <div>
-        <h1> Admin Dashboard Page</h1>
+        <h1> Author Dashboard Page</h1>
         <span>My name is {session?.user.name}</span> <br /> <br />
         <Link href={"/"}>Go Home</Link>
       </div>
     </main>
   );
 };
-// Admin.auth = true;
-Admin.auth = {
-  role: "admin",
+Author.auth = {
+  role: "author",
 };
-// Admin.auth = {
-//   role: "admin",
-//   loading: <AdminLoadingSkeleton />,
-//   unauthorized: "/login-with-different-user", // redirect to this url
-// };
 
-export default Admin;
+export default Author;
