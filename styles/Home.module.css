@@ -41,9 +41,10 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
+  grid-template-columns: repeat(3, minmax(25%, auto));
   width: var(--max-width);
   max-width: 100%;
+  gap: 2rem;
 }
 
 .card {
@@ -52,6 +53,7 @@
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .card span {
@@ -67,9 +69,15 @@
 .card p {
   margin: 0;
   opacity: 0.6;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.5;
   max-width: 30ch;
+}
+.stackWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 0;
 }
 
 .center {
@@ -77,9 +85,15 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 4rem 0;
 }
-
+.stackWrapper h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #000;
+}
+.center h2 {
+  font-size: 3.5rem;
+}
 .center::before {
   background: var(--secondary-glow);
   border-radius: 50%;
@@ -97,7 +111,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -125,7 +139,7 @@
 
 .thirteen::before,
 .thirteen::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
 }
@@ -176,14 +190,20 @@
 /* Mobile */
 @media (max-width: 700px) {
   .content {
-    padding: 4rem;
+    outline: 2px solid red;
   }
-
+  .main {
+    padding-bottom: 0;
+  }
+  .stackWrapper {
+    padding: 4rem 0;
+  }
   .grid {
     grid-template-columns: 1fr;
     margin-bottom: 120px;
     max-width: 320px;
     text-align: center;
+    padding: 0 1rem;
   }
 
   .card {
@@ -194,9 +214,9 @@
     margin-bottom: 0.5rem;
   }
 
-  .center {
+  /* .center {
     padding: 8rem 0 6rem;
-  }
+  } */
 
   .center::before {
     transform: none;
