@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/signin.module.css";
 import {
   AiFillGithub,
@@ -32,6 +32,8 @@ const Signin = () => {
   const { data: session, status } = useSession();
   const loading = status === "loading";
 
+  const [email, setEmail] = useState("");
+
   useEffect(() => {
     if (session) {
       setTimeout(() => {
@@ -42,6 +44,13 @@ const Signin = () => {
 
   const handleOauthSignin = (provider) => () =>
     signIn(provider, { callbackUrl: "http://localhost:3000/" });
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (!email) return false;
+
+    signIn("email", { email, redirect: false });
+  };
 
   return (
     <main className={styles.main}>
@@ -58,6 +67,18 @@ const Signin = () => {
         <h1>You are already signed in</h1>
       ) : (
         <div className={styles.providers}>
+          <div>
+            <form className={styles.form} onSubmit={handleLogin}>
+              <input
+                type="email"
+                name=""
+                id=""
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <button disabled={loading}>Login</button>
+            </form>
+          </div>
           {providers.map((name) => {
             return (
               <div key={name.id}>
