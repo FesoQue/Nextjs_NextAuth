@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
+import Balancer from "react-wrap-balancer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -74,28 +75,34 @@ export default function Home() {
         <div className={styles.grid}>
           <Link href="/admin" className={styles.card}>
             <h2 className={inter.className}>
-              Admin Dashboard <span>-&gt;</span>
+              <Balancer ratio={0.85}>
+                Admin Dashboard <span>-&gt;</span>
+              </Balancer>
             </h2>
             <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
+              In this dashboard, admin can add and remove authors.
             </p>
           </Link>
 
           <Link href="/author" className={styles.card}>
             <h2 className={inter.className}>
-              Author Dashboard <span>-&gt;</span>
+              <Balancer ratio={0.85}>
+                Author Dashboard <span>-&gt;</span>
+              </Balancer>
             </h2>
             <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
+              In this dashboard, can post articles for users to read.
             </p>
           </Link>
 
           <Link href="/user" className={styles.card}>
             <h2 className={inter.className}>
-              User Dashboard <span>-&gt;</span>
+              <Balancer ratio={0.85}>
+                User Dashboard <span>-&gt;</span>
+              </Balancer>
             </h2>
             <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
+              In this dashboard, can read and subscribe to specific authors
             </p>
           </Link>
         </div>

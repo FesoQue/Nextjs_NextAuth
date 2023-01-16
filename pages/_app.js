@@ -2,6 +2,7 @@ import { SessionProvider } from "next-auth/react";
 import "@/styles/globals.css";
 import Navbar from "@/components/sharedlayout/Navbar";
 import Auth from "@/components/auth/Auth";
+import { Provider } from "react-wrap-balancer";
 
 export default function App({
   Component,
@@ -9,14 +10,16 @@ export default function App({
 }) {
   return (
     <SessionProvider session={session}>
-      <Navbar />
-      {Component.auth ? (
-        <Auth role={Component.auth.role}>
+      <Provider>
+        <Navbar />
+        {Component.auth ? (
+          <Auth role={Component.auth.role}>
+            <Component {...pageProps} />
+          </Auth>
+        ) : (
           <Component {...pageProps} />
-        </Auth>
-      ) : (
-        <Component {...pageProps} />
-      )}
+        )}
+      </Provider>
     </SessionProvider>
   );
 }
