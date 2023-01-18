@@ -22,9 +22,9 @@ const Navbar = () => {
       ) : loading ? (
         <button disabled={loading}>
           <BeatLoader
-            color={"#ddd"}
+            color={"#222"}
             loading={loading}
-            size={20}
+            size={18}
             aria-label="Loading Spinner"
           />
         </button>

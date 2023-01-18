@@ -75,6 +75,7 @@ const Signin = () => {
                 id=""
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                placeholder="hello@me.com"
               />
               <button disabled={loading}>Login</button>
             </form>
