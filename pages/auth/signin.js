@@ -1,10 +1,10 @@
+import SigninForm from "./SigninForm";
 import React from "react";
-import Signin from "@/components/auth/Signin";
 
 const signin = () => {
   return (
     <div>
-      <Signin />
+      <SigninForm />
     </div>
   );
 };

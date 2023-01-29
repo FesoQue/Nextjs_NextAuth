@@ -1,7 +1,7 @@
+import styles from "@/styles/Home.module.css";
+import { Inter } from "@next/font/google";
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 
@@ -80,29 +80,30 @@ export default function Home() {
               </Balancer>
             </h2>
             <p className={inter.className}>
-              In this dashboard, admin can add and remove authors.
+              School admin can grant and deny access to teachers to write in the
+              database.
             </p>
           </Link>
 
           <Link href="/author" className={styles.card}>
             <h2 className={inter.className}>
               <Balancer ratio={0.85}>
-                Author Dashboard <span>-&gt;</span>
+                Teacher Dashboard <span>-&gt;</span>
               </Balancer>
             </h2>
             <p className={inter.className}>
-              In this dashboard, can post articles for users to read.
+              Teachers can add student to the school database.
             </p>
           </Link>
 
           <Link href="/user" className={styles.card}>
             <h2 className={inter.className}>
               <Balancer ratio={0.85}>
-                User Dashboard <span>-&gt;</span>
+                Student Dashboard <span>-&gt;</span>
               </Balancer>
             </h2>
             <p className={inter.className}>
-              In this dashboard, can read and subscribe to specific authors
+              Students can only read/view their name on the school portal
             </p>
           </Link>
         </div>

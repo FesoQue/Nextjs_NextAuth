@@ -13,12 +13,15 @@
   border-radius: 4px;
   outline: 0;
   border: 0;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .form button {
   margin-bottom: 0;
-  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  font-size: 16px;
   cursor: pointer;
+  background: #252525 !important;
+  color: white;
+  transition: all 0.3s ease-in-out;
 }
 
 .loginBtn {
@@ -31,9 +34,9 @@
   border-radius: 4px;
   outline: 0;
   border: 1px solid #aaa;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   cursor: pointer;
   margin-bottom: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 .loginBtn span svg {
   font-size: 30px;
@@ -41,5 +44,6 @@
 }
 .loginBtn:hover,
 .form button:hover {
-  background: rgba(var(--card-rgb), 0.1);
+  /* background: rgba(var(--card-rgb), 0.1); */
+  box-shadow: rgba(0, 0, 0, 0.3) 2.4px 2.4px 3.2px;
 }

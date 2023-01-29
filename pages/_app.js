@@ -1,7 +1,7 @@
 import { SessionProvider } from "next-auth/react";
-import "@/styles/globals.css";
-import Navbar from "@/components/sharedlayout/Navbar";
-import Auth from "@/components/auth/Auth";
+import "@/styles/index.css";
+import Auth from "@/auth-role/Auth";
+import Navbar from "@/components/Navbar";
 import { Provider } from "react-wrap-balancer";
 
 export default function App({

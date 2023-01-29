@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
 import styles from "../../styles/signin.module.css";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import {
   AiFillGithub,
   AiOutlineGoogle,
   AiOutlineTwitter,
 } from "react-icons/ai";
-import { signIn, useSession } from "next-auth/react";
 import { ClipLoader } from "react-spinners";
-import { useRouter } from "next/router";
 
 const providers = [
   {
@@ -46,10 +46,10 @@ const Signin = () => {
     signIn(provider, { callbackUrl: "http://localhost:3000/" });
 
   const handleLogin = (e) => {
-    e.preventDefault();
-    if (!email) return false;
-
-    signIn("email", { email, redirect: false });
+    // uncomment when sengrid approves account
+    // e.preventDefault();
+    // if (!email) return false;
+    // signIn("email", { email, redirect: false });
   };
 
   return (
@@ -77,7 +77,10 @@ const Signin = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="hello@me.com"
               />
-              <button disabled={loading}>Login</button>
+              <button disabled={true}>Signup</button>
+              <span className="text-center text-sm text-red-400">
+                Coming soon...
+              </span>
             </form>
           </div>
           {providers.map((name) => {
