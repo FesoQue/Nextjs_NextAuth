@@ -7,6 +7,7 @@ import {
   AiOutlineGoogle,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import { FaFacebookF } from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
 
 const providers = [
@@ -24,6 +25,11 @@ const providers = [
     id: 3,
     provider: "twitter",
     icon: <AiOutlineTwitter />,
+  },
+  {
+    id: 4,
+    provider: "facebook",
+    icon: <FaFacebookF />,
   },
 ];
 
@@ -47,9 +53,9 @@ const Signin = () => {
 
   const handleLogin = (e) => {
     // uncomment when sengrid approves account
-    // e.preventDefault();
-    // if (!email) return false;
-    // signIn("email", { email, redirect: false });
+    e.preventDefault();
+    if (!email) return false;
+    signIn("email", { email, redirect: false });
   };
 
   return (
@@ -77,7 +83,8 @@ const Signin = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="hello@me.com"
               />
-              <button disabled={true}>Signup</button>
+
+              {/* <button>Sign in with Email</button> */}
               <span className="text-center text-sm text-red-400">
                 Coming soon...
               </span>
